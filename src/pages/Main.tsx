@@ -1,16 +1,20 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect } from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import { RootState, useAppDispatch, useAppSelector } from '../redux/store';
 import { fetchTasks } from '../services/steamApi';
 
 const Main: FC = () => {
-  const games = useAppSelector(state => state.games.items)
+  const {items, isLoading, error} = useAppSelector(state => state.games)
+  // const games = useAppSelector(state => state.games.items)
   const dispatch = useAppDispatch();
 
   const handleFetchStudent = () => {
     dispatch(fetchTasks())
-    console.log(games);
+    console.log(items);
   }
+  useEffect(() => {
+    dispatch(fetchTasks());
+  }, [dispatch]);
 
   return (
     <div>

@@ -1,6 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
-import type { RootState } from '../store'
 
 // Define the initial state using that type
 
@@ -19,7 +17,7 @@ export const gameSlice = createSlice({
     fetchingSuccess(state, action) {
       state.isLoading = false;
       state.error = null;
-      state.items = action.payload;
+      state.items = action.payload
     },
     fetchingError(state, action) {
       state.isLoading = false;
