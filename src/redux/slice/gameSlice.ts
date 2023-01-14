@@ -2,28 +2,34 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../store'
 
-interface GameState {
-  games: [],
-}
-
 // Define the initial state using that type
-const initialState = {
-  games: [],
-}
 
 export const gameSlice = createSlice({
   name: 'game',
   // `createSlice` will infer the state type from the `initialState` argument
-  initialState,
+  initialState: {
+    items: [],
+    isLoading: false,
+    error: null,
+  },
   reducers: {
-    getGames: (state, action) => {
-      return {...state, games: [...state.games, ...action.payload]}
-    }
+    fetchingInProgress(state) {
+      state.isLoading = true;
+    },
+    fetchingSuccess(state, action) {
+      state.isLoading = false;
+      state.error = null;
+      state.items = action.payload;
+    },
+    fetchingError(state, action) {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
   },
 })
 
 
-export const {getGames} = gameSlice.actions;
+export const {fetchingInProgress, fetchingSuccess, fetchingError} = gameSlice.actions;
 
 
 export default gameSlice.reducer

@@ -1,26 +1,20 @@
 import React, { FC } from 'react'
 import {useSelector, useDispatch} from 'react-redux'
-import { RootState } from '../redux/store';
-import {getManyGames} from '../services/steamApi'
+import { RootState, useAppDispatch, useAppSelector } from '../redux/store';
+import { fetchTasks } from '../services/steamApi';
 
 const Main: FC = () => {
-  const {games} = useSelector((state: RootState) => state.games)
-  const dispatch = useDispatch();
+  const games = useAppSelector(state => state.games.items)
+  const dispatch = useAppDispatch();
 
   const handleFetchStudent = () => {
-    getManyGames()
+    dispatch(fetchTasks())
+    console.log(games);
   }
 
   return (
     <div>
       <button onClick={handleFetchStudent}>GET FETCH</button>
-      {games.length ? 
-      games.map(game => 
-        <div key={game.id}>{game.name}</div>
-        )
-      :
-      <h1>There is nothing</h1>
-      }
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import { configureStore, MiddlewareArray } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit'
 import gameSlice from './slice/gameSlice'
 import type { TypedUseSelectorHook } from 'react-redux'
 import { useDispatch, useSelector } from 'react-redux'
