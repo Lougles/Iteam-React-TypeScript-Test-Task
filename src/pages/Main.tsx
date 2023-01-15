@@ -4,7 +4,7 @@ import { RootState, useAppDispatch, useAppSelector } from '../redux/store';
 import { fetchTasks } from '../services/steamApi';
 
 const Main: FC = () => {
-  const {items, isLoading, error} = useAppSelector(state => state.games)
+  const {items, isLoading, error} = useSelector((state: RootState) => state.games)
   // const games = useAppSelector(state => state.games.items)
   const dispatch = useAppDispatch();
 
@@ -12,9 +12,9 @@ const Main: FC = () => {
     dispatch(fetchTasks())
     console.log(items);
   }
-  useEffect(() => {
-    dispatch(fetchTasks());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchTasks());
+  // }, [dispatch]);
 
   return (
     <div>

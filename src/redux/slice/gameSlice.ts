@@ -14,10 +14,10 @@ export const gameSlice = createSlice({
     fetchingInProgress(state) {
       state.isLoading = true;
     },
-    fetchingSuccess(state, action) {
+    fetchingSuccess(state, {payload}) {
       state.isLoading = false;
       state.error = null;
-      state.items = action.payload
+      state.items.push()
     },
     fetchingError(state, action) {
       state.isLoading = false;
