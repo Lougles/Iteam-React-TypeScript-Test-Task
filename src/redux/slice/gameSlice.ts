@@ -5,7 +5,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 
 type Istate = {
-  items: object[],
+  items: any[],
   isLoading: boolean,
   error: string | null
 }
@@ -29,7 +29,7 @@ export const gameSlice = createSlice({
       state.State.isLoading = false;
       state.State.error = null;
       console.log(payload)
-      state.State.items = payload
+      state.State.items.push(payload)
     },
     fetchingError(state, action) {
       state.State.isLoading = false;

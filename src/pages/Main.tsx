@@ -7,8 +7,8 @@ const Main: FC = () => {
   const dispatch = useAppDispatch();
 
   const handleFetchStudent = async() => {
-    await dispatch(fetchDataFromDB())
-    console.log(items);
+    const data = await dispatch(fetchDataFromDB())
+    console.log(data);
   }
   // useEffect(() => {
   //   dispatch(fetchTasks());
