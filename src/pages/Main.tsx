@@ -1,12 +1,13 @@
 import React, { FC, useEffect } from 'react'
 import { RootState, store, useAppDispatch, useAppSelector } from '../redux/store';
+import {fetchDataFromDB} from '../redux/operations/game-operations'
 
 const Main: FC = () => {
-  const {items, isLoading, error} = useAppSelector((state: RootState) => state.games)
+  const {items, isLoading, error } = useAppSelector((state: RootState) => state.games.State)
   const dispatch = useAppDispatch();
 
   const handleFetchStudent = async() => {
-    // await dispatch(fetchTasks())
+    await dispatch(fetchDataFromDB())
     console.log(items);
   }
   // useEffect(() => {

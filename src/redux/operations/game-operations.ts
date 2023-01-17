@@ -3,7 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import {getData} from '../../services/api'
 import {Game} from './types'
 
-export const addIncome = createAsyncThunk <Game, string>(
+export const fetchDataFromDB = createAsyncThunk <Game>(
   'transaction/add-income',
   async (_, { rejectWithValue }) => {
     try {

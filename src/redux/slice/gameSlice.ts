@@ -1,33 +1,40 @@
+import { RootState } from '../store';
 import { createSlice } from '@reduxjs/toolkit'
-import {addIncome} from '../operations/game-operations'
 
 // Define the initial state using that type
+
+
+type Istate = {
+  items: object[],
+  isLoading: boolean,
+  error: string | null
+}
+
+const State: Istate = {
+  items: [],
+  isLoading: false,
+  error: null,
+}
 
 export const gameSlice = createSlice({
   name: 'game',
   initialState: {
-    items: [],
-    isLoading: false,
-    error: null,
+    State
   },
-  reducers: {},
-  // reducers: {
-  //   fetchingInProgress(state) {
-  //     state.isLoading = true;
-  //   },
-  //   fetchingSuccess(state, {payload}) {
-  //     state.isLoading = false;
-  //     state.error = null;
-  //     console.log(payload)
-  //     state.items = payload
-  //   },
-  //   fetchingError(state, action) {
-  //     state.isLoading = false;
-  //     state.error = action.payload;
-  //   },
-  // },
-  extraReducers: {
-
+  reducers: {
+    fetchingInProgress(state) {
+      state.State.isLoading = true;
+    },
+    fetchingSuccess(state, {payload}) {
+      state.State.isLoading = false;
+      state.State.error = null;
+      console.log(payload)
+      state.State.items = payload
+    },
+    fetchingError(state, action) {
+      state.State.isLoading = false;
+      state.State.error = action.payload;
+    },
   },
 })
 
