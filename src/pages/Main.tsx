@@ -6,19 +6,26 @@ const Main: FC = () => {
   const {items, isLoading, error} = useAppSelector(state => state.games)
   const dispatch = useAppDispatch();
 
-  const handleFetchStudent = async() => {
-    console.log(items);
-    // dispatch(fetchGames())
-    console.log('QWERTY: ', items)
-  }
   useEffect(() => {
     dispatch(fetchGames());
   }, [dispatch]);
 
   return (
-    <div>
-      <button onClick={handleFetchStudent}>GET FETCH</button>
-    </div>
+    <>
+      <ul>
+        {
+          items ? 
+          items.map(item => (
+            <li key={item.appId}>
+              <h3>{item.title}</h3>
+              <p>{item.price}</p>
+            </li>
+          ))
+          :
+          <h1>There is no documents here</h1>
+        }
+      </ul>
+    </>
   )
 }
 
