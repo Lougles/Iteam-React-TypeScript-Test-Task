@@ -1,6 +1,6 @@
 import React, { FC, useEffect } from 'react'
-import { RootState, store, useAppDispatch, useAppSelector } from '../redux/store';
-// import {fetchDataFromDB} from '../redux/operations/game-operations'
+import { useAppDispatch, useAppSelector } from '../redux/store';
+import {fetchGames} from '../redux/operations/game-operations'
 
 const Main: FC = () => {
   const {items, isLoading, error} = useAppSelector(state => state.games)
@@ -8,10 +8,12 @@ const Main: FC = () => {
 
   const handleFetchStudent = async() => {
     console.log(items);
+    // dispatch(fetchGames())
+    console.log('QWERTY: ', items)
   }
-  // useEffect(() => {
-  //   dispatch(fetchTasks());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchGames());
+  }, [dispatch]);
 
   return (
     <div>

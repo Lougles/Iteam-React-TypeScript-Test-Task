@@ -1,7 +1,7 @@
 import { RootState } from '../store';
 import { createSlice, AnyAction, PayloadAction } from '@reduxjs/toolkit'
 import {fetchGames} from '../operations/game-operations'
-import { Game } from '../operations/types';
+import { Game, Post } from '../operations/types';
 
 
 type Istate = {
