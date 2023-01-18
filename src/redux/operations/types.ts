@@ -7,3 +7,4 @@ export type Game = {
   reviewSummary?: string,
   price?: string
 }
+

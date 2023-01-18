@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
 import gameSlice from './slice/gameSlice'
-// import type { TypedUseSelectorHook } from 'react-redux'
 import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux'
 
 

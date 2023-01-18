@@ -1,45 +1,34 @@
 import { RootState } from '../store';
 import { createSlice } from '@reduxjs/toolkit'
-
-// Define the initial state using that type
+import {fetchGames} from '../operations/game-operations'
+import { Game } from '../operations/types';
 
 
 type Istate = {
-  items: any[],
+  items: Game[],
   isLoading: boolean,
   error: string | null
 }
 
-const State: Istate = {
+const initialState: Istate = {
   items: [],
   isLoading: false,
   error: null,
 }
 
 export const gameSlice = createSlice({
-  name: 'game',
-  initialState: {
-    State
-  },
-  reducers: {
-    fetchingInProgress(state) {
-      state.State.isLoading = true;
-    },
-    fetchingSuccess(state, {payload}) {
-      state.State.isLoading = false;
-      state.State.error = null;
-      console.log(payload)
-      state.State.items.push(payload)
-    },
-    fetchingError(state, action) {
-      state.State.isLoading = false;
-      state.State.error = action.payload;
-    },
-  },
+  name: 'Games',
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(fetchGames.pending, (state) => {
+      state.isLoading = true
+    })
+    builder.addCase(fetchGames.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.items = action.payload;
+    })
+  }
 })
-
-
-// export const {fetchingInProgress, fetchingSuccess, fetchingError} = gameSlice.actions;
-
 
 export default gameSlice.reducer
