@@ -1,5 +1,5 @@
 import { RootState } from '../store';
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, AnyAction, PayloadAction } from '@reduxjs/toolkit'
 import {fetchGames} from '../operations/game-operations'
 import { Game } from '../operations/types';
 
@@ -21,14 +21,23 @@ export const gameSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchGames.pending, (state) => {
+    builder
+    .addCase(fetchGames.pending, (state) => {
       state.isLoading = true
     })
-    builder.addCase(fetchGames.fulfilled, (state, action) => {
+    .addCase(fetchGames.fulfilled, (state, action) => {
       state.isLoading = false;
       state.items = action.payload;
+    })
+    .addMatcher(isError, (state, action: PayloadAction<string>) => {
+      state.error = action.payload;
+      state.isLoading = false;
     })
   }
 })
 
 export default gameSlice.reducer
+
+function isError(action: AnyAction) {
+  return action.type.endsWith('rejected');
+}
