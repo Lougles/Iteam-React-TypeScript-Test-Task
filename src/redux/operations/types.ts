@@ -7,3 +7,10 @@ export type Game = {
   reviewSummary?: string,
   price?: string
 }
+
+export type Post = {
+  userId: number,
+  id: number,
+  title: string,
+  body: string,
+}
