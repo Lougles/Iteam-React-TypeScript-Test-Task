@@ -2,6 +2,27 @@
 @import url('../../index.scss');
 
 .Header_Wrapper{
-  width: 100%;
-  background-color: '#171A21';
+  background-color: #171a21;
+  width: 1280px;
+  display: flex;
+  align-items: center;
+  padding: 33px 18px 33px 12px;
+}
+
+.logo{
+  width: 150px;
+}
+
+
+.Header_Input {
+  width: 587px;
+  border-radius: 10px;
+  height: 37px;
+  background: url('../../shared/images/logo/input-logo.png') no-repeat;
+  background-position: 567px 6px;
+  background-color: #837F7F;
+  padding-left: 15px;
+  color: #FFFFFF;
+}::placeholder{
+  color: #FFFFFF;
 }
