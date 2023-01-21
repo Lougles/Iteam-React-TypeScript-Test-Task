@@ -6,9 +6,9 @@ const Main: FC = () => {
   const {items, isLoading, error} = useAppSelector(state => state.games)
   const dispatch = useAppDispatch();
 
-  useEffect(() => {
-    dispatch(fetchGames());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchGames());
+  // }, [dispatch]);
 
   return (
     <>

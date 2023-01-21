@@ -11,7 +11,32 @@ type Istate = {
 }
 
 const initialState: Istate = {
-  items: [],
+  items: [
+    {'appId': '1',
+     'price': '8,19€',
+     'title': 'Counter-Strike: Global Offensive',
+     'released': '21 Aug, 2012',
+     'imgUrl': '../../shared/images/logo/example.png'
+    },
+    {'appId': '2',
+     'price': '8,19€',
+     'title': 'Counter-Strike: Global Offensive',
+     'released': '21 Aug, 2012',
+     'imgUrl': '../../shared/images/logo/example.png'
+    },
+    {'appId': '3',
+     'price': '8,19€',
+     'title': 'Counter-Strike: Global Offensive',
+     'released': '21 Aug, 2012',
+     'imgUrl': '../../shared/images/logo/example.png'
+    },
+    {'appId': '4',
+     'price': '8,19€',
+     'title': 'Counter-Strike: Global Offensive',
+     'released': '21 Aug, 2012',
+     'imgUrl': '../../shared/images/logo/example.png'
+    },
+  ],
   isLoading: false,
   error: null,
 }
