@@ -1,0 +1,114 @@
+@import url("../../index.scss");
+.Header_Wrapper {
+  background-color: #171a21;
+  max-width: 1280px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 33px 18px 33px 12px;
+}
+
+.logo {
+  width: 150px;
+}
+
+.Header_Input {
+  width: 587px;
+  border-radius: 10px;
+  height: 37px;
+  background: url("../../shared/images/logo/input-logo.png") no-repeat;
+  background-position: 567px 6px;
+  background-color: #837F7F;
+  padding-left: 15px;
+  color: #FFFFFF;
+}
+
+::-webkit-input-placeholder {
+  color: #FFFFFF;
+}
+
+:-ms-input-placeholder {
+  color: #FFFFFF;
+}
+
+::-ms-input-placeholder {
+  color: #FFFFFF;
+}
+
+::placeholder {
+  color: #FFFFFF;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+  width: 37px;
+  height: 37px;
+  margin-left: 12px;
+}
+
+.Profile_Btn {
+  border: none;
+  border-radius: 10px;
+  background-color: #837F7F;
+  cursor: pointer;
+  min-width: 36px;
+}
+
+.Profile_Btn:hover {
+  background-color: #837F7F;
+}
+
+.dropdownOptions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 144px;
+  height: 53px;
+  padding: 5px 0;
+  background-color: #837F7F;
+  border-radius: 10px;
+}
+
+.dropdown:hover .dropdownOptions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dropdownOptions .link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.dropdownOptions .link:hover {
+  color: #0a0a23;
+  background-color: #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.select {
+  background-color: #837F7F;
+  width: 189px;
+  height: 36px;
+  margin-left: 13px;
+}
+/*# sourceMappingURL=Header.module.css.map */

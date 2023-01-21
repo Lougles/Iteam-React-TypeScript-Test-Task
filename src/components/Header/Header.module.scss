@@ -75,7 +75,7 @@
 }
 
 .dropdownOptions{
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -102,4 +102,11 @@
   background-color: #ddd;
   border-radius:5px;
   cursor: pointer;
+}
+
+.select{
+  background-color: #837F7F;
+  width: 189px;
+  height: 36px;
+  margin-left: 13px;
 }
