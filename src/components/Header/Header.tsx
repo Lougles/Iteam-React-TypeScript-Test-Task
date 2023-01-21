@@ -31,6 +31,12 @@ const Header: FC = () => {
         }
       </div>
       <Select
+        styles={{
+          control: (baseStyles) => ({
+            ...baseStyles,
+            backgroundColor: '#837F7F'
+          }),
+        }}
         className={style.select}
         classNamePrefix="select"
         defaultValue={colourOptions[0]}
