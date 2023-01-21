@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 const IS_MOBILE = () : boolean =>
   typeof window !== 'undefined' ? window.innerWidth <= 768 - 0.02 : false;
 const IS_TABLET = () : boolean =>
-  typeof window !== 'undefined' ? window.innerWidth <= 1280 - 0.02 : false;
+  typeof window !== 'undefined' ? window.innerWidth <= 1171 - 0.02 : false;
 const IS_DESCTOP = () : boolean =>
-  typeof window !== 'undefined' ? window.innerWidth >= 1280 : false;
+  typeof window !== 'undefined' ? window.innerWidth >= 1171 : false;
 
 const useResizeScreen = () => {
   const [isMobile, setMobile] = useState(false);

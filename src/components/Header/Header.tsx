@@ -13,36 +13,43 @@ const Header: FC = () => {
   const handleOpen = () => setIsOpen(true)
   const hanleClose = () => setIsOpen(false)
 
-
   return (
-    <div className={style.Header_Wrapper}>
-      <img className={style.logo} src={steamLogo} />
-      <input placeholder='Enter an app name...' className={style.Header_Input}></input>
-      <div className={style.dropdown}>
-        <button className={style.Profile_Btn} onClick={handleOpen}>
-        <img src={checkboxloggo} />
-        </button>
-        {
-          isOpen &&
-        <div className={style.dropdownOptions}>
-          <p onClick={hanleClose} className={style.link}>Lower to bigger</p>
-          <p onClick={hanleClose} className={style.link} >Bigger to lower</p>
+    <div className={style.Infinity_Element}>
+      <div className={style.Header_Wrapper}>
+        <img className={style.logo} src={steamLogo} />
+        <input placeholder='Enter an app name...' className={style.Header_Input}></input>
+        <div className={style.dropdown}>
+          <button className={style.Profile_Btn} onClick={handleOpen}>
+          <img src={checkboxloggo} />
+          </button>
+          {
+            isOpen &&
+          <div className={style.dropdownOptions}>
+            <p onClick={hanleClose} className={style.link}>Lower to bigger</p>
+            <p onClick={hanleClose} className={style.link} >Bigger to lower</p>
+          </div>
+          }
         </div>
-        }
+        <Select
+          styles={{
+            control: (baseStyles) => ({
+              ...baseStyles,
+              backgroundColor: '#837F7F',
+              borderRadius: '10px',
+              color: '#fff'
+            }),
+          }}
+          className={style.select}
+          classNamePrefix="select"
+          defaultValue={colourOptions[0]}
+          name="color"
+          options={colourOptions}
+        />
+        <div className={style.Navlink_Wrapper}>
+          <button className={style.Navlink_Btn}>Search</button>
+          <button className={style.Navlink_Btn}>Like list</button>
+        </div>
       </div>
-      <Select
-        styles={{
-          control: (baseStyles) => ({
-            ...baseStyles,
-            backgroundColor: '#837F7F'
-          }),
-        }}
-        className={style.select}
-        classNamePrefix="select"
-        defaultValue={colourOptions[0]}
-        name="color"
-        options={colourOptions}
-      />
     </div>
   )
 }

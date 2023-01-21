@@ -1,11 +1,18 @@
 // @import '../../index.scss'
 @import url('../../index.scss');
 
+
+.Infinity_Element{ 
+  background-color: #171a21;
+}
+
 .Header_Wrapper{
   background-color: #171a21;
-  max-width: 1280px;
+  width: 1171px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
   padding: 33px 18px 33px 12px;
 }
 
@@ -105,8 +112,22 @@
 }
 
 .select{
-  background-color: #837F7F;
   width: 189px;
   height: 36px;
   margin-left: 13px;
+}
+
+.Navlink_Wrapper{
+  margin-left: 13px;
+  display: flex;
+  border-radius: 10px;
+  background-color: #837F7F;
+  height: 37px;
+}
+
+.Navlink_Btn{
+  width: 67px;
+  background-color: #837F7F;
+  border-radius: 10px;
+  color: #fff;
 }
