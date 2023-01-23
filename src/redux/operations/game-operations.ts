@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import {Game, Post} from './types'
+import {IGame, IPost} from '../../types/types'
 
-export const fetchGames = createAsyncThunk<Game[], void, {rejectValue: string}>(
+export const fetchGames = createAsyncThunk<IGame[], void, {rejectValue: string}>(
   'games/fetchGames',
   async (_, {rejectWithValue}) => {
 
@@ -17,6 +17,6 @@ export const fetchGames = createAsyncThunk<Game[], void, {rejectValue: string}>(
       if(!response.ok){
         rejectWithValue('Error')
       }
-      return (await response.json()) as Post[]
+      return (await response.json()) as IPost[]
   },
 );

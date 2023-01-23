@@ -1,4 +1,4 @@
-export type Game = {
+export type IGame = {
   appId?: string,  
   title?: string,
   url?: string,
@@ -8,7 +8,7 @@ export type Game = {
   price?: string
 }
 
-export type Post = {
+export type IPost = {
   userId: number,
   id: number,
   title: string,

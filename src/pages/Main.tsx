@@ -1,6 +1,8 @@
 import React, { FC, useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../redux/store';
 import {fetchGames} from '../redux/operations/game-operations'
+import GameList from '../components/GameList/GameList';
+import style from './Main.module.scss'
 
 const Main: FC = () => {
   const {items, isLoading, error} = useAppSelector(state => state.games)
@@ -11,21 +13,11 @@ const Main: FC = () => {
   // }, [dispatch]);
 
   return (
-    <>
-      <ul>
-        {
-          items ? 
-          items.map(item => (
-            <li key={item.appId}>
-              <h3>{item.title}</h3>
-              <p>{item.price}</p>
-            </li>
-          ))
-          :
-          <h1>There is no documents here</h1>
-        }
-      </ul>
-    </>
+    <div className={style.Infinity_Element}>
+      <div className={style.Main_Wrapper}>
+        <GameList games={items} />
+      </div>
+    </div>
   )
 }
 

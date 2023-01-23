@@ -1,11 +1,10 @@
-import { RootState } from '../store';
 import { createSlice, AnyAction, PayloadAction } from '@reduxjs/toolkit'
 import {fetchGames} from '../operations/game-operations'
-import { Game, Post } from '../operations/types';
+import { IGame } from '../../types/types';
 
 
 type Istate = {
-  items: Game[],
+  items: IGame[],
   isLoading: boolean,
   error: string | null
 }

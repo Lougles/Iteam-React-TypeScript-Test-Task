@@ -1,0 +1,19 @@
+@import url("../index.scss");
+.Infinity_Element {
+  background-color: #171a21;
+}
+
+.Main_Wrapper {
+  background-color: #171a21;
+  width: 1171px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=Main.module.css.map */
