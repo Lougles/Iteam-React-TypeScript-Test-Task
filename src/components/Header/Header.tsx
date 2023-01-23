@@ -19,6 +19,7 @@ const Header: FC = () => {
   //   setSearch(e.target.value)
   // }
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value)
     dispatch(Search(e.target.value))
   }
 

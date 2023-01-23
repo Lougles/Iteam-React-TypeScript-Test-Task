@@ -15,7 +15,8 @@ export const dataSlice = createSlice({
   initialState,
   reducers: {
     Search: (state, action) => {
-      state = action.payload
+      return state = action.payload
+      // return {...state, search: action.payload}
     }
   },
 })
