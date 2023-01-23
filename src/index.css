@@ -1,13 +1,11 @@
-@import './shared/styles/index';
-
+@charset "UTF-8";
 body {
   margin: 0;
   font-weight: 400;
   font-size: 14px;
-  // font-family: 'Roboto', sans-serif;
 }
 
-input{
+input {
   border: none;
   padding: 0;
 }
@@ -21,6 +19,7 @@ p {
   margin: 0;
   padding: 0;
 }
+
 a {
   text-decoration: none;
 }
@@ -42,7 +41,8 @@ img {
 }
 
 body::-webkit-scrollbar {
-  width: 3px; /* ширина всей полосы прокрутки */
+  width: 3px;
+  /* ширина всей полосы прокрутки */
   height: 3px;
 }
 
@@ -53,3 +53,4 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   border-radius: 20px;
 }
+/*# sourceMappingURL=index.css.map */

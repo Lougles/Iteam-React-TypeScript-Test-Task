@@ -1,2 +1,134 @@
-@import '../../index.scss'
+// @import '../../index.scss'
+@import url('../../index.scss');
 
+
+.Infinity_Element{ 
+  background-color: #171a21;
+}
+
+.Header_Wrapper{
+  background-color: #171a21;
+  width: 1171px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  // padding: 33px 18px 33px 12px;
+  padding: 33px 0;
+}
+
+.logo{
+  width: 150px;
+}
+
+
+.Header_Input {
+  width: 587px;
+  border-radius: 10px;
+  height: 37px;
+  background: url('../../shared/images/logo/input-logo.png') no-repeat;
+  background-position: 567px 6px;
+  background-color: #837F7F;
+  padding-left: 15px;
+  color: #FFFFFF;
+}::placeholder{
+  color: #FFFFFF;
+}
+
+// .Header_Dropdown{
+//   display: block;
+//   position: relative;
+//   justify-content: center;
+//   align-items: center;
+//   width: 37px;
+//   height: 37px;
+//   background-color: #837F7F;
+//   border-radius: 10px;
+//   margin-left: 12px;
+// }
+
+// .Header_Dropdown:hover .Header_Dropdown_Options {
+//   display: block;
+// }
+
+// .Header_Dropdown_Options{
+//   display: none;
+//   position: absolute;
+//   overflow: auto;
+//   width: 100px;
+//   background-color: #837F7F;
+//   border-radius: 10px;
+//   color: #FFFFFF;
+// }
+
+
+.dropdown{
+  display: inline-block;
+  position: relative;
+  width: 37px;
+  height: 37px;
+  margin-left: 12px;
+
+}
+.Profile_Btn {
+  border:none;
+  border-radius: 10px;
+  background-color: #837F7F;
+  cursor:pointer;
+  min-width: 36px;
+}
+
+.Profile_Btn:hover{
+  background-color: #837F7F;
+}
+
+.dropdownOptions{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 144px;
+  height: 53px;
+  padding: 5px 0;
+  background-color:#837F7F;
+  border-radius: 10px;
+}
+
+.dropdown:hover .dropdownOptions{
+  display: flex;
+}
+
+.dropdownOptions .link {
+  display: flex;
+  color: #fff;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.dropdownOptions .link:hover{
+  color: #0a0a23;
+  background-color: #ddd;
+  border-radius:5px;
+  cursor: pointer;
+}
+
+.select{
+  width: 189px;
+  height: 36px;
+  margin-left: 13px;
+}
+
+.Navlink_Wrapper{
+  margin-left: 13px;
+  display: flex;
+  border-radius: 10px;
+  background-color: #837F7F;
+  height: 37px;
+}
+
+.Navlink_Btn{
+  width: 67px;
+  background-color: #837F7F;
+  border-radius: 10px;
+  color: #fff;
+}

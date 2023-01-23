@@ -1,11 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import {Game, Post} from './types'
+import {IGame, IPost} from '../../types/types'
 
-export const fetchGames = createAsyncThunk<Game[], void, {rejectValue: string}>(
+export const fetchGames = createAsyncThunk<IGame[], void, {rejectValue: string}>(
   'games/fetchGames',
   async (_, {rejectWithValue}) => {
 
-    // const response = await fetch('https://jsonplaceholder.typicode.com/posts', 
       const response = await fetch('https://steam2.p.rapidapi.com/search/Counter/page/1', 
         {
           headers: {
@@ -18,6 +17,6 @@ export const fetchGames = createAsyncThunk<Game[], void, {rejectValue: string}>(
       if(!response.ok){
         rejectWithValue('Error')
       }
-      return (await response.json()) as Post[]
+      return (await response.json()) as IPost[]
   },
 );

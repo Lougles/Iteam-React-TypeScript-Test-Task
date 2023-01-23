@@ -1,17 +1,42 @@
-import { RootState } from '../store';
 import { createSlice, AnyAction, PayloadAction } from '@reduxjs/toolkit'
 import {fetchGames} from '../operations/game-operations'
-import { Game, Post } from '../operations/types';
+import { IGame } from '../../types/types';
+import example from '../../shared/images/logo/example.png'
 
 
 type Istate = {
-  items: Game[],
+  items: IGame[],
   isLoading: boolean,
   error: string | null
 }
 
 const initialState: Istate = {
-  items: [],
+  items: [
+    {'appId': '1',
+     'price': '8,19€',
+     'title': 'Counter-Strike: Global Offensive',
+     'released': '21 Aug, 2012',
+     'imgUrl': example
+    },
+    {'appId': '2',
+     'price': '8,19€',
+     'title': 'Counter-Strike: Global Offensive',
+     'released': '21 Aug, 2012',
+     'imgUrl': example
+    },
+    {'appId': '3',
+     'price': '8,19€',
+     'title': 'Counter-Strike: Global Offensive',
+     'released': '21 Aug, 2012',
+     'imgUrl': example
+    },
+    {'appId': '4',
+     'price': '8,19€',
+     'title': 'Counter-Strike: Global Offensive',
+     'released': '21 Aug, 2012',
+     'imgUrl': example
+    },
+  ],
   isLoading: false,
   error: null,
 }
