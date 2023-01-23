@@ -1,6 +1,7 @@
 import { createSlice, AnyAction, PayloadAction } from '@reduxjs/toolkit'
 import {fetchGames} from '../operations/game-operations'
 import { IGame } from '../../types/types';
+import example from '../../shared/images/logo/example.png'
 
 
 type Istate = {
@@ -15,25 +16,25 @@ const initialState: Istate = {
      'price': '8,19€',
      'title': 'Counter-Strike: Global Offensive',
      'released': '21 Aug, 2012',
-     'imgUrl': '../../shared/images/logo/example.png'
+     'imgUrl': example
     },
     {'appId': '2',
      'price': '8,19€',
      'title': 'Counter-Strike: Global Offensive',
      'released': '21 Aug, 2012',
-     'imgUrl': '../../shared/images/logo/example.png'
+     'imgUrl': example
     },
     {'appId': '3',
      'price': '8,19€',
      'title': 'Counter-Strike: Global Offensive',
      'released': '21 Aug, 2012',
-     'imgUrl': '../../shared/images/logo/example.png'
+     'imgUrl': example
     },
     {'appId': '4',
      'price': '8,19€',
      'title': 'Counter-Strike: Global Offensive',
      'released': '21 Aug, 2012',
-     'imgUrl': '../../shared/images/logo/example.png'
+     'imgUrl': example
     },
   ],
   isLoading: false,

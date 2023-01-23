@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { IGame } from '../../types/types'
 import GameItem from '../GameItem/GameItem'
+import style from './GameList.module.scss'
 
 interface gameListProps {
   games: IGame[]
@@ -8,7 +9,7 @@ interface gameListProps {
 
 const GameList: FC<gameListProps> = ({games}) => {
   return (
-    <div>
+    <div className={style.List_Wrapper}>
       {games.map(item => 
         <GameItem key={item.appId}  game={item}/>
       )}

@@ -1,0 +1,34 @@
+@import url('../../index.scss');
+
+
+.Item_Wrapper{
+  width: 262px;
+  color: #fff;
+  background-color: #17323A;
+  border-radius: 10%;
+  margin-left: 21px;
+}
+
+.Item_Img{
+  width: 100%;
+}
+
+.Info_Wrapper{
+  padding: 6px 0 7px 11px;
+}
+
+.Item_Header{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #FFFFFF;
+  width: 161px;
+  margin: 0;
+}
+
+.Item_Date{
+  margin-top: 6px;
+  margin-bottom: 5px;
+}
