@@ -1,6 +1,7 @@
 @import url("../index.scss");
 .Infinity_Element {
   background-color: #171a21;
+  padding-top: 24px;
 }
 
 .Main_Wrapper {
@@ -15,5 +16,6 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin: 0 auto;
 }
 /*# sourceMappingURL=Main.module.css.map */
