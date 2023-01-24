@@ -7,6 +7,21 @@ import { colourOptions } from './data';
 import Main from '../../pages/Main'
 import { useAppDispatch, useAppSelector } from '../../redux/store'
 
+export enum SwitchType{
+  Price = 'price',
+  Date = 'date',
+}
+
+function getSwithTypeFromInput(value: string): SwitchType {
+    if(value == 'price') {
+      return SwitchType.Price
+    } else if(value == 'date') {
+      return SwitchType.Date;
+    }
+
+    return SwitchType.Price;
+}
+
 const Header: FC = () => {
 
   //get data from redux
@@ -16,7 +31,7 @@ const Header: FC = () => {
   //data from input and btns
   const [search, setSearch] = useState<string | undefined>('')
   const [belowAbove, setBelowAbove] = useState<string | undefined>('');
-  const [priceOrDate, setPriceOrDate] = useState<string | undefined>('');
+  const [priceOrDate, setPriceOrDate] = useState<string>(colourOptions[0].value);
   const [isOpen, setIsOpen] = useState(false);
 
   //functions for btns and inputs
@@ -30,9 +45,12 @@ const Header: FC = () => {
     setBelowAbove(text)
     console.log(belowAbove)
   }
-  const handlePriceOrDate = (e:ChangeEvent<HTMLSelectElement>) => {
-    setPriceOrDate(e.target.value);
-    console.log(priceOrDate)
+  const getValue = () => {
+    return priceOrDate ? colourOptions.find(item => item.value === priceOrDate) : '';
+  }
+  const handlePriceOrDate = (data: any):void => {
+    let value: SwitchType = getSwithTypeFromInput(data.value.toString());
+    setPriceOrDate(value)
   }
 
   return (
@@ -64,10 +82,10 @@ const Header: FC = () => {
             }}
             className={style.select}
             classNamePrefix="select"
-            defaultValue={colourOptions[0]}
             name="color"
+            value={getValue()}
+            onChange={handlePriceOrDate}
             options={colourOptions}
-            onChange={() => handlePriceOrDate}
           />
           <div className={style.Navlink_Wrapper}>
             <button className={style.Navlink_Btn}>Search</button>
