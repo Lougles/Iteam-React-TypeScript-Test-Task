@@ -4,6 +4,7 @@ import {fetchGames} from '../redux/operations/game-operations'
 import GameList from '../components/GameList/GameList';
 import style from './Main.module.scss'
 
+
 const Main: FC = () => {
   const {items, isLoading, error} = useAppSelector(state => state.games)
   const dispatch = useAppDispatch();

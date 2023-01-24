@@ -1,6 +1,9 @@
 import React, { FC } from 'react'
 import { IGame } from '../../types/types'
 import style from './GameItem.module.scss'
+
+
+
 interface GameItemProps {
   game: IGame
 }
