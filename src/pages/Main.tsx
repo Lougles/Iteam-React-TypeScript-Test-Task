@@ -12,9 +12,9 @@ interface MainProps {
 
 const Main: FC<MainProps> = ({search, belowAbove, priceOrDate}) => {
 
-  console.log("search: ", search)
-  console.log("belowAbove: ", belowAbove)
-  console.log("priceOrDate: ", priceOrDate)
+  // console.log("search: ", search)
+  // console.log("belowAbove: ", belowAbove)
+  // console.log("priceOrDate: ", priceOrDate)
   const {items, isLoading, error} = useAppSelector(state => state.games)
   const dispatch = useAppDispatch();
 

@@ -6,6 +6,7 @@ import Select from 'react-select'
 import { colourOptions } from './data';
 import Main from '../../pages/Main'
 import { useAppDispatch, useAppSelector } from '../../redux/store'
+import { fetchGamesByQuery } from '../../redux/operations/game-operations'
 
 export enum SwitchType{
   Price = 'price',
@@ -50,6 +51,9 @@ const Header: FC = () => {
     let value: SwitchType = getSwithTypeFromInput(data.value.toString());
     setPriceOrDate(value)
   }
+  const fetchSearchQuery = () => {
+      dispatch(fetchGamesByQuery(search))
+  }
 
   return (
     <>
@@ -84,7 +88,7 @@ const Header: FC = () => {
             options={colourOptions}
           />
           <div className={style.Navlink_Wrapper}>
-            <button className={style.Navlink_Btn}>Search</button>
+            <button className={style.Navlink_Btn} onClick={fetchSearchQuery}>Search</button>
             <button className={style.Navlink_Btn}>Like list</button>
           </div>
         </div>
