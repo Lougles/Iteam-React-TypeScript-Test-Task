@@ -13,13 +13,12 @@ export enum SwitchType{
 }
 
 function getSwithTypeFromInput(value: string): SwitchType {
-    if(value == 'price') {
-      return SwitchType.Price
-    } else if(value == 'date') {
-      return SwitchType.Date;
-    }
-
-    return SwitchType.Price;
+  if(value == 'price') {
+    return SwitchType.Price
+  } else if(value == 'date') {
+    return SwitchType.Date;
+  }
+  return SwitchType.Price;
 }
 
 const Header: FC = () => {
@@ -43,7 +42,6 @@ const Header: FC = () => {
   const handleBelowAboveBtn = (text:string):void => {
     setIsOpen(false)
     setBelowAbove(text)
-    console.log(belowAbove)
   }
   const getValue = () => {
     return priceOrDate ? colourOptions.find(item => item.value === priceOrDate) : '';
@@ -63,13 +61,11 @@ const Header: FC = () => {
             <button className={style.Profile_Btn} onClick={handleOpen}>
             <img src={checkboxloggo} />
             </button>
-            {
-              isOpen &&
+            {isOpen &&
             <div className={style.dropdownOptions}>
               <p onClick={() => handleBelowAboveBtn('Low')} className={style.link}>Lower to bigger</p>
-              <p onClick={() => handleBelowAboveBtn('Big')} className={style.link} >Bigger to lower</p>
-            </div>
-            }
+              <p onClick={() => handleBelowAboveBtn('Big')} className={style.link}>Bigger to lower</p>
+            </div>}
           </div>
           <Select
             styles={{
@@ -93,6 +89,7 @@ const Header: FC = () => {
           </div>
         </div>
       </div>
+      <Main search={search} belowAbove={belowAbove} priceOrDate={priceOrDate}/>
     </>
   )
 }
