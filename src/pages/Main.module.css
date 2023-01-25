@@ -1,7 +1,10 @@
 @import url("../index.scss");
+
+
 .Infinity_Element {
   background-color: #171a21;
   padding-top: 24px;
+  height: 100vh;
 }
 
 .Main_Wrapper {

@@ -25,7 +25,7 @@ export const fetchGamesByQuery = createAsyncThunk<IGame[], string | undefined, {
   'games/fetchGamesByQuery',
   async (query, {rejectWithValue}) => {
 
-      const response = await fetch(`https://steam2.p.rapidapi.com/search/${query}/page/1`, 
+      const response = await fetch(`https://steam2.p.rapidapi.com/search/${query}`, 
         {
           headers: {
             'X-RapidAPI-Key': '3c8777c356mshc593cd3afda5fc9p142607jsnf6011a527231',
