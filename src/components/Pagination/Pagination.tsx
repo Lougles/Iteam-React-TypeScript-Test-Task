@@ -19,6 +19,15 @@ const Pagination: FC<PaginationProps> = ({initialPage, marginPagesDisplayed, pag
       pageRangeDisplayed={pageRangeDisplayed}
       onPageChange={onChange}
       className={style.Pagination}
+      activeClassName={style.Pagination_activeClassName}
+      pageLinkClassName={style.Pagination_pageLinkClassName}
+      breakLinkClassName={style.Pagination_breakLinkClassName}
+      nextLinkClassName={style.Pagination_nextLinkClassName}
+      previousLinkClassName={style.Pagination_previousLinkClassName}
+      pageClassName={style.Pagination_pageClassName}
+      breakClassName={style.Pagination_breakClassName}
+      nextClassName={style.Pagination_nextClassName}
+      previousClassName={style.Pagination_previousClassName}
         />
   )
 }

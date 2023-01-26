@@ -2,7 +2,7 @@ import { createSlice, AnyAction, PayloadAction } from '@reduxjs/toolkit'
 import {fetchGames, fetchGamesByQuery} from '../operations/game-operations'
 import { IGame } from '../../types/types';
 import example from '../../shared/images/logo/example.png'
-
+import {mockData} from './mockData'
 
 type Istate = {
   items: IGame[],
@@ -11,32 +11,7 @@ type Istate = {
 }
 
 const initialState: Istate = {
-  items: [
-    // {'appId': '1',
-    //  'price': '8,19€',
-    //  'title': 'Counter-Strike: Global Offensive',
-    //  'released': '21 Aug, 2012',
-    //  'imgUrl': example
-    // },
-    // {'appId': '2',
-    //  'price': '8,19€',
-    //  'title': 'Counter-Strike: Global Offensive',
-    //  'released': '21 Aug, 2012',
-    //  'imgUrl': example
-    // },
-    // {'appId': '3',
-    //  'price': '8,19€',
-    //  'title': 'Counter-Strike: Global Offensive',
-    //  'released': '21 Aug, 2012',
-    //  'imgUrl': example
-    // },
-    // {'appId': '4',
-    //  'price': '8,19€',
-    //  'title': 'Counter-Strike: Global Offensive',
-    //  'released': '21 Aug, 2012',
-    //  'imgUrl': example
-    // },
-  ],
+  items: mockData,
   isLoading: false,
   error: null,
 }
