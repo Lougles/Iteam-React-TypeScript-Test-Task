@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import { IGame } from '../../types/types'
 import GameItem from '../GameItem/GameItem'
 import CustomPagination from '../CustomPagination/CustomPagination'
@@ -10,6 +10,12 @@ interface gameListProps {
 }
 
 const GameList: FC<gameListProps> = ({games}) => {
+  const [currentPage, setCurrentPage] = useState<number>(1);
+
+  const paginate = (number: number) => {
+    setCurrentPage(number);
+  }
+
   return (
     <div>
       <div className={style.List_Wrapper}>
@@ -22,7 +28,7 @@ const GameList: FC<gameListProps> = ({games}) => {
       }
       </div>
       {
-        games.length && <CustomPagination />
+        games.length && <CustomPagination paginate={paginate}/>
       }
       {/* <Pagination /> */}
     </div>
