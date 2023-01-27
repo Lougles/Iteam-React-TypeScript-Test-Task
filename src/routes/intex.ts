@@ -11,5 +11,5 @@ export enum RouteNames {
 }
 
 export const routes: IRoute[] = [
-  {path: '/', exact: true, component: Main}
+  // {path: '/', exact: true, component: Main}
 ]

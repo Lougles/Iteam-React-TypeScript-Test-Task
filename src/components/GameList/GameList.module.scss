@@ -4,5 +4,10 @@
 .List_Wrapper {
   display: flex;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
+.NoGame_Header{
+  color: #fff;
+  
+}

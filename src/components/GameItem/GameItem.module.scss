@@ -7,6 +7,12 @@
   background-color: #17323A;
   border-radius: 10%;
   margin-left: 21px;
+  margin-bottom: 21px;
+}
+
+.Item_Wrapper:hover {
+  background-color: coral;
+  cursor: pointer;
 }
 
 .Item_Img{
