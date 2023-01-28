@@ -3,11 +3,11 @@ import style from './CustomPagination.module.scss'
 import leftArrow from '../../shared/images/svg/paginationleftarrow.svg'
 import rightArrow from '../../shared/images/svg/paginationrightarrow.svg'
 
-type PropsPagination = {
-  paginate: (number: number) => void;
-}
+// type PropsPagination = {
+//   paginate: (number: number) => void;
+// }
 
-const CustomPagination: FC<PropsPagination> = ({paginate}) => {
+const CustomPagination: FC = () => {
   const pageNumbers = [1,2,3]
   return (
     <div>
@@ -19,7 +19,7 @@ const CustomPagination: FC<PropsPagination> = ({paginate}) => {
         </li>
       {pageNumbers.map(number => (
         <li className={style.CP_ArrowBtn}>
-          <a onClick={paginate(number)}>{number}</a>
+          <a>{number}</a>
         </li>
       ))}
         <li className={style.CP_ArrowBtn}>

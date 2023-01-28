@@ -12,9 +12,9 @@ interface gameListProps {
 const GameList: FC<gameListProps> = ({games}) => {
   const [currentPage, setCurrentPage] = useState<number>(1);
 
-  const paginate = (number: number) => {
-    setCurrentPage(number);
-  }
+  // const paginate = (number: number) => {
+  //   setCurrentPage(number);
+  // }
 
   return (
     <div>
@@ -28,7 +28,7 @@ const GameList: FC<gameListProps> = ({games}) => {
       }
       </div>
       {
-        games.length && <CustomPagination paginate={paginate}/>
+        games.length && <CustomPagination/>
       }
       {/* <Pagination /> */}
     </div>
