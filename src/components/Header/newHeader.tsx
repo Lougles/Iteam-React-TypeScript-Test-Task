@@ -23,55 +23,33 @@ function getSwithTypeFromInput(value: string): SwitchType {
 }
 
 const Header: FC = () => {
-
-  //get data from redux
+  // const []
   const {items, isLoading, error} = useAppSelector(state => state.games)
+  const {search} = useAppSelector(state => state.data)
+
   const dispatch = useAppDispatch();
 
-  // const {search} = useAppSelector(state => state.data)
-
-  //data from input and btns
-  const [search, setSearch] = useState<string | undefined>('')
-  const [belowAbove, setBelowAbove] = useState<string | undefined>('');
-  const [priceOrDate, setPriceOrDate] = useState<string>(colourOptions[0].value);
-  const [isOpen, setIsOpen] = useState(false);
-
-  //functions for btns and inputs
-  const handleOpen = () => setIsOpen(true)
-  // const hanleClose = () => setIsOpen(false)
-  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value)
-  }
-  const handleBelowAboveBtn = (text:string):void => {
-    setIsOpen(false)
-    setBelowAbove(text)
-  }
-  const getValue = () => {
-    return priceOrDate ? colourOptions.find(item => item.value === priceOrDate) : '';
-  }
-  const handlePriceOrDate = (data: any):void => {
-    let value: SwitchType = getSwithTypeFromInput(data.value.toString());
-    setPriceOrDate(value)
+  const handleBelowAboveBtn = (data: string) => {
+    
   }
   const fetchSearchQuery = () => {
     dispatch(fetchGamesByQuery(search))
   }
-
+  
   return (
     <>
       <div className={style.Infinity_Element}>
         <div className={style.Header_Wrapper}>
           <img className={style.logo} src={steamLogo} />
-          <input onChange={handleSearch} value={search} placeholder='Enter an app name...' className={style.Header_Input}></input>
+          <input value={search} placeholder='Enter an app name...' className={style.Header_Input}></input>
           <div className={style.dropdown}>
-            <button className={style.Profile_Btn} onClick={handleOpen}>
+            <button className={style.Profile_Btn} >
             <img src={checkboxloggo} />
             </button>
-            {isOpen &&
             <div className={style.dropdownOptions}>
-              <p onClick={() => handleBelowAboveBtn('Low')} className={style.link}>Lower to bigger</p>
-              <p onClick={() => handleBelowAboveBtn('Big')} className={style.link}>Bigger to lower</p>
-            </div>}
+              <p onClick={() => handleBelowAboveBtn('lowtobig')} className={style.link}>Lower to bigger</p>
+              <p onClick={() => handleBelowAboveBtn('bigtolow')} className={style.link}>Bigger to lower</p>
+            </div>
           </div>
           <Select
             styles={{
@@ -85,8 +63,8 @@ const Header: FC = () => {
             className={style.select}
             classNamePrefix="select"
             name="color"
-            value={getValue()}
-            onChange={handlePriceOrDate}
+            // value={getValue()}
+            // onChange={handlePriceOrDate}
             options={colourOptions}
           />
           <div className={style.Navlink_Wrapper}>
@@ -95,7 +73,9 @@ const Header: FC = () => {
           </div>
         </div>
       </div>
-      <Main search={search} belowAbove={belowAbove} priceOrDate={priceOrDate}/>
+      <Main search={search} 
+      // belowAbove={belowAbove} priceOrDate={priceOrDate}
+      />
     </>
   )
 }

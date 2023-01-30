@@ -6,11 +6,13 @@ import style from './Main.module.scss'
 
 interface MainProps {
   search: string | undefined,
-  belowAbove: string | undefined,
-  priceOrDate: string,
+  // belowAbove: string | undefined,
+  // priceOrDate: string,
 }
 
-const Main: FC<MainProps> = ({search, belowAbove, priceOrDate}) => {
+const Main: FC<MainProps> = ({search, 
+  // belowAbove, priceOrDate
+}) => {
 
 
   const {items, isLoading, error} = useAppSelector(state => state.games)
