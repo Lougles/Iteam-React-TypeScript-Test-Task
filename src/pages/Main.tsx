@@ -12,15 +12,18 @@ interface MainProps {
 
 const Main: FC<MainProps> = ({search, belowAbove, priceOrDate}) => {
 
-  // console.log("search: ", search)
-  // console.log("belowAbove: ", belowAbove)
-  // console.log("priceOrDate: ", priceOrDate)
+
   const {items, isLoading, error} = useAppSelector(state => state.games)
   const dispatch = useAppDispatch();
 
   // useEffect(() => {
   //   dispatch(fetchGames());
   // }, [dispatch]);
+
+  const paginate = (number: number) => {
+    dispatch(fetchGames())
+  }
+
 
   return (
     <div className={style.Infinity_Element}>
