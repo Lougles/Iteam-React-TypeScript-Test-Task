@@ -15,7 +15,7 @@ const CustomPagination: FC = () => {
           </a>
         </li>
       {pageNumbers.map(number => (
-        <li className={style.CP_ArrowBtn}>
+        <li key={number} className={style.CP_ArrowBtn}>
           <a>{number}</a>
         </li>
       ))}

@@ -7,6 +7,7 @@ import { colourOptions } from './data';
 import Main from '../../pages/Main'
 import { useAppDispatch, useAppSelector } from '../../redux/store'
 import { fetchGamesByQuery } from '../../redux/operations/game-operations'
+import { Search, SortByPrice } from '../../redux/slice/dataSlice'
 
 export enum SwitchType{
   Price = 'price',
@@ -25,30 +26,37 @@ function getSwithTypeFromInput(value: string): SwitchType {
 const Header: FC = () => {
   // const []
   const {items, isLoading, error} = useAppSelector(state => state.games)
-  const {search} = useAppSelector(state => state.data)
+  const {search, sortByPrice} = useAppSelector(state => state.data)
 
   const dispatch = useAppDispatch();
 
-  const handleBelowAboveBtn = (data: string) => {
-    
+  const handleSortByPrice = (data: string) => {
+    dispatch(SortByPrice(data))
+    console.log(sortByPrice)
   }
+  const handleInput =  (text: string) => {
+    dispatch(Search(text))
+    console.log(search)
+  }
+
   const fetchSearchQuery = () => {
     dispatch(fetchGamesByQuery(search))
   }
-  
+
   return (
     <>
       <div className={style.Infinity_Element}>
         <div className={style.Header_Wrapper}>
           <img className={style.logo} src={steamLogo} />
-          <input value={search} placeholder='Enter an app name...' className={style.Header_Input}></input>
+          <input onChange={(event) => handleInput(event.target.value)} placeholder='Enter an app name...' className={style.Header_Input}></input>
           <div className={style.dropdown}>
             <button className={style.Profile_Btn} >
             <img src={checkboxloggo} />
             </button>
             <div className={style.dropdownOptions}>
-              <p onClick={() => handleBelowAboveBtn('lowtobig')} className={style.link}>Lower to bigger</p>
-              <p onClick={() => handleBelowAboveBtn('bigtolow')} className={style.link}>Bigger to lower</p>
+              <p onClick={() => handleSortByPrice('lowtobig')} className={style.link}>Lower to bigger</p>
+              <p onClick={() => handleSortByPrice('bigtolow')} className={style.link}>Bigger to lower</p>
+              {/* <p onClick={() => console.log(check(''))} className={style.link}>Check</p> */}
             </div>
           </div>
           <Select
