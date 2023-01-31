@@ -7,7 +7,7 @@ import { colourOptions } from './data';
 import Main from '../../pages/Main'
 import { useAppDispatch, useAppSelector } from '../../redux/store'
 import { fetchGamesByQuery } from '../../redux/operations/game-operations'
-import { Search, SortByPrice } from '../../redux/slice/dataSlice'
+import { Search, SortByPrice, SwitchPriceAndDate } from '../../redux/slice/dataSlice'
 
 export enum SwitchType{
   Price = 'price',
@@ -26,10 +26,13 @@ function getSwithTypeFromInput(value: string): SwitchType {
 const Header: FC = () => {
   // const []
   const {items, isLoading, error} = useAppSelector(state => state.games)
-  const {search, sortByPrice} = useAppSelector(state => state.data)
+  const {search, sortByPrice, switchPriceDate} = useAppSelector(state => state.data)
 
   const dispatch = useAppDispatch();
 
+  const handleSwitchPriceAndDate = (data: string) => {
+    dispatch(SwitchPriceAndDate(data))
+  }
   const handleSortByPrice = (data: string) => {
     dispatch(SortByPrice(data))
     console.log(sortByPrice)
