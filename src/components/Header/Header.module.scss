@@ -67,9 +67,23 @@
   position: relative;
   width: 37px;
   height: 37px;
-  margin-left: 12px;
-
+  margin-left: 12px; 
+}:hover > .dropdownOptions { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 144px;
+  height: 53px;
+  padding: 5px 0;
+  background-color:#837F7F;
+  border-radius: 10px;
 }
+
+.dropdownOptions{
+  display: none;
+}
+
 .Profile_Btn {
   border:none;
   border-radius: 10px;
@@ -80,18 +94,6 @@
 
 .Profile_Btn:hover{
   background-color: #837F7F;
-}
-
-.dropdownOptions{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 144px;
-  height: 53px;
-  padding: 5px 0;
-  background-color:#837F7F;
-  border-radius: 10px;
 }
 
 .dropdown:hover .dropdownOptions{

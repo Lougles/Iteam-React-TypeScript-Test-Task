@@ -4,6 +4,7 @@ import GameItem from '../GameItem/GameItem'
 import CustomPagination from '../CustomPagination/CustomPagination'
 import Pagination from '../Pagination/Pagination'
 import style from './GameList.module.scss'
+import { useAppDispatch } from '../../redux/store'
 
 interface gameListProps {
   games: IGame[]
@@ -11,10 +12,8 @@ interface gameListProps {
 
 const GameList: FC<gameListProps> = ({games}) => {
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const dispatch = useAppDispatch();
 
-  const paginate = (number: number) => {
-    setCurrentPage(number);
-  }
 
   return (
     <div>
@@ -28,7 +27,7 @@ const GameList: FC<gameListProps> = ({games}) => {
       }
       </div>
       {
-        games.length && <CustomPagination paginate={paginate}/>
+        games.length && <CustomPagination />
       }
       {/* <Pagination /> */}
     </div>
