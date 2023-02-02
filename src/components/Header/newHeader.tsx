@@ -71,6 +71,7 @@ const Header: FC = () => {
                 color: '#fff'
               }),
             }}
+            
             className={style.select}
             classNamePrefix="select"
             name="color"
